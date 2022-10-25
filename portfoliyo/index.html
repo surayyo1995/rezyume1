@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+
+    <!-- BOXICONS -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- CUSTOM STYLES -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="left_side">
+
+            <!-- PROFILE -->
+            <div class="profile">
+                <div class="img_setting">
+                    <img src="rasm7.jpg">
+                </div>
+                <h4>To`laboyeva Surayyo</h4>
+                <h5>Fronted Developer</h5>
+                <button class="btn" onclick="PDF();">Download PDF</button>
+            </div>
+
+            <!-- CONTACT INFO -->
+            <div class="left_items">
+                <h4 class="title">Contact Info</h4>
+                <ul>
+
+                    <li>
+                        <span class="icons">
+                            <i class="bx bx-envelope"></i>
+                        </span>
+                        <span class="text">tolaboyevasurayyo@mail.com</span>
+                    </li>
+                    <li>
+                        <span class="icons">
+                            <i class="bx bx-phone"></i>
+                        </span>
+                        <span class="text">+998946855682</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- EDUCATION -->
+            <div class="left_items">
+                <h4 class="title">Education</h4>
+                <ul>
+                    <li>
+                        <h5 class="dates">2011 - 2014</h4>
+                            <h4 class="text">Construction and Service Kasp Vocational College
+                        </h5>
+
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Diplom -->
+            <div class="left_items">
+                <h4 class="title">Diplom</h4>
+                <ul>
+                    <li>
+                        <h5 class="dates">May, 2014</h5>
+                        <h4 class="text"> Direction of accounting </h4>
+
+
+                    </li>
+                </ul>
+            </div>
+
+            <!-- LANGUAGES -->
+            <div class="left_items">
+                <h4 class="title">Languages</h4>
+                <ul class="languages">
+                    <li>
+                        <span class="text">English</span>
+                        
+                    </li>
+                    <li>
+                        <span class="text">Russian</span>
+                        >
+                    </li>
+
+                    <li>
+                        <span class="text">Uzbek</span>
+                        
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="right_side">
+
+            <!-- About me -->
+            <div class="right_items">
+                <h3 class="title">About me</h3>
+                <p>My name is Surayyo.My surname is To`laboyeva.I was born on the 8 december
+                    1995.
+                    I am from Tashkent.I live in bog`ishamol street in Yangibazar.
+                    I am married.
+                    I want to be an It teacher.I am currently studying at Astrum It Academy.
+
+                </p>
+            </div>
+
+            <!-- EXPERIENCE -->
+            <div class="right_items">
+                <h4 class="title">Experience</h4>
+
+                <div class="experience">
+
+                    <div class="description">
+
+                        <p>I have been studying at the
+                            Astrum It Academy for five months. I have no work experience.</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- HOBBIES -->
+            <div class="right_items">
+                <h3 class="title">Hobbies</h3>
+                <ul class="hobby">
+                    <li><i class="bx bx-dish"></i> Cooking</li>
+                    <li><i class="bx bx-water"></i> Swimming</li>
+                    <li><i class="bx bx-book"></i> Reading</li>
+
+                </ul>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    </div>
+
+    <!-- HTML2PDF SOURCE -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- CUSTOM JS -->
+    <script type="text/javascript">
+
+        function PDF() {
+            const e = document.querySelector(".container");
+
+            // RESIZE
+            e.style.maxWidth = "700px";
+
+            // OPTIONS
+            const opt = {
+                filename: 'resume.pdf',
+                image: {
+                    type: "jpg",
+                    quality: 0.99
+                },
+                margin: 0,
+                jsPDF: {
+                    unit: "pt",
+                    format: "letter",
+                    orientation: "portrait"
+                },
+                pagebreak: {
+                    mode: ["avoid-all", "css", "legacy"]
+                }
+            };
+            html2pdf().set(opt).from(e).save();
+
+            // RESIZE
+            setTimeout(() => { e.style.maxWidth = "1400px"; }, 2000);
+        }
+
+    </script>
+
+</body>
+
+</html>
